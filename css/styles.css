@@ -1,0 +1,30 @@
+/*----------------*/
+
+/*	 Basic Setup  */
+
+/*----------------*/
+
+* {
+  margin: 2%;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+td {
+  /* padding: 1%; */
+  width: 1%;
+}
+
+th {
+  font-family: 'Raleway';
+  margin: 1%;
+
+}
