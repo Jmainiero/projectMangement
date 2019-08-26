@@ -66,6 +66,25 @@ function get_proj_description($id) ##Changed function to get_proj_decription 4/2
 
 }
 
+function get_all_comments($id)
+{
+
+    try {
+        $results = $db->prepare(
+            'SELECT projectComments.commentDetails, projectComments.createdBy, projectComments.initialDesc FROM projectComments WHERE projectId=? AND projectComments.initialDesc=0'
+        );
+        $results->bindParam(1, $id, PDO::PARAM_INT);
+        $results->execute();
+    } catch (Exception $e) {
+        echo 'bad query';
+        echo $e;
+    }
+
+    $result = $results->fetch(PDO::FETCH_ASSOC);
+    return $result;
+
+}
+
 function postComments($pComment, $projectId)
 {
     include 'dbconnection.php';
